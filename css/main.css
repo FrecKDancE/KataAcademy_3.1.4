@@ -1,4 +1,4 @@
-﻿@font-face {
+@font-face {
     font-family: 'TT Lakes';
     src: url('../fonts/TTLakes/TTLakes-Medium.eot');
     src: url('../fonts/TTLakes/TTLakes-Medium.eot?#iefix') format('embedded-opentype'),
@@ -6,30 +6,28 @@
     url('../fonts/TTLakes/TTLakes-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-    }
+}
 
 ::-webkit-scrollbar {
     display: none;
 }
-*,
-::after,
-::before{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body {
-    margin: 0;
     font-family: "TT Lakes";
     font-weight: 500;
     font-style: normal;
 }
 
+
+
 /* Шапка */
-.page-header {
+.header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     border-bottom: 1px solid #D9FFF5;
     height: 88px;
 }
@@ -38,52 +36,39 @@ body {
     height: 30px;
     border-radius: 1px;
     border: 1px solid #EAEAEA;
-    margin-right: 20px;
-    
+    margin-right: 20px; 
 }
 
-.left-side{
+.header__left-side{
     display: flex;
     align-items: center;
-    
 }
 
-.left-side__burger {
-
+.header__burger {
     margin-left: 16px;
     margin-right: 16px;
-    
 }
 
-.left-side__divider{
+.header__divider,
+.header__contacts{
     display:none;
 }
 
-.left-side__logo{
+.header__logo,
+.header__contacts img{
     margin-right: 16px;
-
 }
 
-
-
-.right-side{
+.header__right-side{
     display: flex;
     align-items: center;
-    
 }
 
-.right-side__contacts{
-    display:none;
-}
-
-.right-side__contacts img{
-    margin-right: 16px;
-}
-.right-side__contacts img:last-child{
+.header__contacts img:last-child{
     margin-right: 0;
 }
-.right-side__group,
-.right-side__checkstatus {
+.header__group,
+.header__checkstatus {
     display: flex;
     margin-right: 16px;
 }
@@ -101,6 +86,8 @@ body {
 .right-side__text{
     margin-right: 8px;
 }
+
+
 
 /* Основной контент */
 .content{
@@ -138,6 +125,8 @@ body {
 
 .content__items{
     display: flex;
+    width: 100%;
+    justify-content: space-between;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -202,18 +191,23 @@ body {
     color:red;
 }
 
+.content__image img{
+    width: 100%;
+    height: auto;
+}
 
 
-@media (min-width: 768px) and (max-width: 1119px){
+
+@media screen and (min-width: 768px) and (max-width: 1119px){
 
     
-    .left-side__divider{
+    .header__divider{
         display:block;
     }
-    .right-side__divider{
+    .header__divider{
         margin-left: 20px;
     }
-    .right-side__contacts{
+    .header__contacts{
         display:flex;
     }
 
@@ -222,13 +216,9 @@ body {
         margin-bottom: 40px ;
     }
 
-    .content__title{
-        margin-bottom: 32px;
-    }
-
+    .content__title,
     .content__items{
         margin-bottom: 32px;
-
     }
 
     .content_text{
@@ -242,6 +232,7 @@ body {
 
     .content__image{
         display: flex;
+        flex-grow: 1;
         margin-right: 25px;
         margin-bottom: 40px;
     }
@@ -250,12 +241,13 @@ body {
         margin-bottom: 0;
         order: 1;
         margin-bottom: 14px;
-        
     }
-
 }
-@media (min-width: 1120px) {
-    .page-header{
+
+
+
+@media screen and (min-width: 1120px) {
+    .header{
         display:none;
     }
     .content__right-side{
@@ -264,23 +256,33 @@ body {
 
     .content__first-block{
         flex-wrap: wrap;
-        margin-bottom: 40px ;
+        margin-bottom: 49px ;
+    }
+
+    .content_title{
+        margin-left:30px;
+    }
+    .content__items{
+        margin-left: 32px;
+        margin-right: 25px;
     }
 
     .content_text{
-        height: 160px;
         width: 490px;
+        height: 160px;
         line-height: 20px;
-        margin-left: 24px;
-        margin-right: 48px;
-        margin-bottom: 10px;
+        margin-left: 34px;
+        margin-right: 36px;
+        margin-bottom: 14px;
     }
     .content__image{
         display: flex;
-        margin-right: 25px;
+        flex-grow: 1;
+        margin-right: 29px;
         margin-bottom: 49px;
     }
     .read-more{
+        margin-left: 40px;
         margin-bottom: 100px;
     }
 }
