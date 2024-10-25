@@ -22,6 +22,9 @@ body {
     font-style: normal;
 }
 
+button{
+    border: none;
+}
 
 
 /* Шапка */
@@ -44,18 +47,18 @@ body {
     align-items: center;
 }
 
-.header__burger {
+.header__btn-burger {
     margin-left: 16px;
     margin-right: 16px;
+    background: url(../img/burger.svg) center center no-repeat;
 }
 
-.header__divider,
+.header__divider-visible,
 .header__contacts{
     display:none;
 }
 
-.header__logo,
-.header__contacts img{
+.header__logo{
     margin-right: 16px;
 }
 
@@ -64,15 +67,27 @@ body {
     align-items: center;
 }
 
-.header__contacts img:last-child{
-    margin-right: 0;
-}
-.header__group,
-.header__checkstatus {
-    display: flex;
-    margin-right: 16px;
-}
 
+.header__btn-group{
+    margin-right: 16px;
+    background: url(../img/repair.svg) center center no-repeat;
+
+}
+.header__btn-checkstatus {
+    margin-right: 16px;
+    background: url(../img/checkstatus.svg) center center no-repeat;
+}
+.header__btn-call{
+    margin-right: 16px;
+    background: url(../img/call.svg) center center no-repeat;
+}
+.header__btn-chat{
+    margin-right: 16px;
+    background: url(../img/chat.svg) center center no-repeat;
+}
+.header__btn-profile{
+    background: url(../img/profile.svg) center center no-repeat;
+}
 .content__right-side{
     display: none;
     margin-left: auto;
@@ -80,13 +95,23 @@ body {
 
 .content__group,
 .content__checkstatus{
+    display:flex;
     align-items: center;
 }
 
 .right-side__text{
+    color:#1B1C21;
     margin-right: 8px;
 }
 
+
+
+.btn{
+    border-radius: 50%;
+    width: 40px; 
+    height: 40px;
+    background-color: #FF3E79 ;
+}
 
 
 /* Основной контент */
@@ -120,7 +145,7 @@ body {
     margin-right: 16px;
     font-size: 28px;
     line-height: 40px;
-    
+    color:#1B1C21;
 }
 
 .content__items{
@@ -146,7 +171,7 @@ body {
     border-radius:6px ;
 }
 .content__item a{
-    color:black;
+    color:#7E7E82;
     text-decoration: none;
     font-size: 16px;
     line-height: 24px;
@@ -161,6 +186,7 @@ body {
 
 .content_text{
     overflow: hidden;
+    color: #1B1C21;
     height: 90px;
     font-size:14px;
     line-height: 18px;
@@ -174,7 +200,6 @@ body {
     margin-bottom: 16px;
     margin-left: 16px;
     height: 24px;
-
 }
 
 .read-more__button{
@@ -185,6 +210,7 @@ body {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
+    color: #1B1C21;
 }
 
 .read-more__button:hover{
@@ -200,20 +226,19 @@ body {
 
 @media screen and (min-width: 768px) and (max-width: 1119px){
 
-    
-    .header__divider{
+    .header__divider-visible{
         display:block;
-    }
-    .header__divider{
         margin-left: 20px;
     }
-    .header__contacts{
+
+   .header__contacts{
         display:flex;
     }
 
     .content__first-block{
         flex-wrap: wrap;
         margin-bottom: 40px ;
+        width: 50%;
     }
 
     .content__title,
@@ -223,7 +248,6 @@ body {
 
     .content_text{
         height: 160px;
-        width: 312px;
         line-height: 20px;
         margin-left: 24px;
         margin-right: 48px;
@@ -247,6 +271,7 @@ body {
 
 
 @media screen and (min-width: 1120px) {
+
     .header{
         display:none;
     }
@@ -255,6 +280,7 @@ body {
     }
 
     .content__first-block{
+        width: 50%;
         flex-wrap: wrap;
         margin-bottom: 49px ;
     }
@@ -268,7 +294,6 @@ body {
     }
 
     .content_text{
-        width: 490px;
         height: 160px;
         line-height: 20px;
         margin-left: 34px;
@@ -284,5 +309,17 @@ body {
     .read-more{
         margin-left: 40px;
         margin-bottom: 100px;
+    }
+}
+
+@media screen and (min-width: 1420px){
+    .header{
+        display: none;
+    }
+
+    .content{
+        width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
